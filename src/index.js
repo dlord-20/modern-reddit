@@ -3,7 +3,9 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
 import App from './App';
-import UserPost from './features/userPost/UserPost';
+import Nav from './features/nav/Nav';
+import UserPosts from './features/userPosts/UserPosts';
+import Footer from './features/footer/Footer';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
@@ -13,8 +15,9 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <UserPost />
-      {/* <App /> */}
+      <Nav />
+      <UserPosts />
+      <Footer />
     </Provider>
   </React.StrictMode>
 );
