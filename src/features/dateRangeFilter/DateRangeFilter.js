@@ -1,16 +1,26 @@
-import React, {useState} from "react";
+import React from "react";
+import { 
+    useSelector, 
+    useDispatch 
+} from "react-redux";
+import { 
+    selectDateRangeFilter,
+    changeDateRange
+ } from "./dateRangeFilterSlice";
 
 export default function DateRangeFilter() {
-    const [ dateRangeFilter, setDateRangeFilter ] = useState('24 Hours');
+
+    const dateRange = useSelector(selectDateRangeFilter);
+    const dispatch = useDispatch();
     
-    const handleDateChange = (event) => {
-        setDateRangeFilter(event.target.value);
-    }
+    // const handleDateChange = (event) => {
+    //     setDateRangeFilter(event.target.value);
+    // }
 
     return (
         <div>
             <label>
-                <select value={dateRangeFilter} onChange={handleDateChange}>
+                <select value={dateRange} onChange={(e) => dispatch(changeDateRange(e.target.value))}>
                     <option value="24 Hours">24 Hours</option>
                     <option value="3 Days">3 Days</option>
                     <option value="Week">Week</option>
