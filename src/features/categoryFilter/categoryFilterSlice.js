@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  value: 'Trending'
+  value: 'hot'
 };
 
 export const categoryFilterSlice = createSlice({

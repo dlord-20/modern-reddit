@@ -18,12 +18,12 @@ const initialState = {
 //Make the url customized according to filters and customize the limit based on scroll or clicking to add more
 export const getRedditFeed = createAsyncThunk(
     'redditAPI/getFeed',
-    async (subReddit = 'CasualUK', category = 'new', dateRange, limit = 10) => {
-        const testURL = `https://www.reddit.com/r/${subReddit}.json?limit=${limit}`;
-        const url = `https://www.reddit.com/.json?limit=${limit}`;
+    async (category = 'new', dateRange, limit = 10) => {
+        //Probably should have url come from another function that can decide what url type we are looking for
+        const url = `https://www.reddit.com/${category}.json?limit=${limit}`;
         const settings = { method: "Get"};
         let redditData = [];
-        await fetch(testURL, settings)
+        await fetch(url, settings)
             .then(res => res.json())
             .then(data => {
                 for(let i = 0; i < limit; i++) {

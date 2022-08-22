@@ -1,16 +1,18 @@
 import React, { useEffect } from "react";
 import UserPost from "../userPost/UserPost";
 import { getRedditFeed } from "../redditAPI/redditAPISlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCategoryFilter } from "../categoryFilter/categoryFilterSlice";
 
 export default function UserPosts() {
     const dispatch = useDispatch();
+    const category = useSelector(selectCategoryFilter);
 
 
     useEffect(() => {
         dispatch(getRedditFeed());
         // console.log('getRedditFeed')
-    })
+    }, category)
 
     return(
         <div>
