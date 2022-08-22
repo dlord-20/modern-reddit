@@ -1,7 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
-import { selectCategoryFilter } from "../categoryFilter/categoryFilterSlice";
-import { selectDateRangeFilter } from "../dateRangeFilter/dateRangeFilterSlice";
 
 // const category = useSelector(selectCategoryFilter);
 // const dateRange = useSelector(selectDateRangeFilter);
@@ -15,11 +12,18 @@ const initialState = {
     redditFeed: {}
 }
 
+// Different types of reddit URLS
+
+const getRedditURL = (category, dateRange, limit, subreddit) => {
+    return 'hi';
+}
+
 //Make the url customized according to filters and customize the limit based on scroll or clicking to add more
 export const getRedditFeed = createAsyncThunk(
     'redditAPI/getFeed',
-    async (category = 'new', dateRange, limit = 10) => {
+    async (category = 'new', dateRange, limit = 10, subreddit = false) => {
         //Probably should have url come from another function that can decide what url type we are looking for
+        const urlTest = getRedditURL(category, dateRange, limit, subreddit);
         const url = `https://www.reddit.com/${category}.json?limit=${limit}`;
         const settings = { method: "Get"};
         let redditData = [];
@@ -47,12 +51,7 @@ export const redditAPISlice = createSlice({
     name: 'redditAPI',
     initialState: initialState,
     reducers: {
-        changeCategory: (state, action) => {
 
-        },
-        changeDateRange: (state, action) => {
-
-        }
     },
     extraReducers: (builder) => {
         builder
@@ -72,7 +71,7 @@ export const redditAPISlice = createSlice({
     }
 })
 
-export const { changeCategory, changeDateRange } = redditAPISlice.actions;
+// export const { changeCategory, changeDateRange } = redditAPISlice.actions;
 
 export const selectRedditAPI = (state) => state.redditAPI;
 
