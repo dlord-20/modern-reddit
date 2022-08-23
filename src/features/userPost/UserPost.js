@@ -20,8 +20,8 @@ export default function UserPost(props) {
     // }
 
     const handleImageInput = () => {
-        // console.log(thumbnail);
-        if(thumbnail !== null && thumbnail !== 'nsfw' && thumbnail !== 'default' && thumbnail !== 'default' && thumbnail !== 'spoiler' && thumbnail !== 'self') {
+        console.log(thumbnail);
+        if(thumbnail !== null && thumbnail !== 'nsfw' && thumbnail !== 'default' && thumbnail !== 'default' && thumbnail !== 'spoiler' && thumbnail !== 'self' && thumbnail !== '') {
             return <img src={thumbnail} alt='#'/>
         } 
         return null;

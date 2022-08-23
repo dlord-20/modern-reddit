@@ -30,7 +30,12 @@ export default function UserPosts() {
                 redditData.push(
                     <UserPost 
                         title={post.title}
+                        url={post.url}
                         thumbnail={post.thumbnail}
+                        score={post.score}
+                        selftext={post.selftext}
+                        author={post.author}
+                        body={post.body}
                     />
                 )
             }
