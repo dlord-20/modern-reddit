@@ -21,6 +21,12 @@ const initialState = {
 // https://www.reddit.com/top/?t=week
 
 const getRedditURL = (category, isDateRange, dateRange, limit, subreddit, subredditName) => {
+    // console.log('category: ' + category);
+    // console.log('isDateRange: ' + isDateRange);
+    // console.log('dateRange: ' + dateRange);
+    // console.log('limit: ' + limit);
+    // console.log('subreddit: ' + subreddit);
+    // console.log('name: ' + subredditName);
     let url = `https://www.reddit.com/${category}.json?limit=${limit}`;
     if(subreddit) {
         url = `https://www.reddit.com/r/${subredditName}.json?limit=${limit}`;
@@ -36,6 +42,12 @@ export const getRedditFeed = createAsyncThunk(
     'redditAPI/getFeed',
     async ({category, isDateRange, dateRange, limit, subreddit, subredditName}) => {
         const url = getRedditURL(category, isDateRange, dateRange, limit, subreddit, subredditName);
+        // console.log('category: ' + category);
+        // console.log('isDateRange: ' + isDateRange);
+        // console.log('dateRange: ' + dateRange);
+        // console.log('limit: ' + limit);
+        // console.log('subreddit: ' + subreddit);
+        // console.log('name: ' + subredditName);
         const settings = { method: "Get"};
         let redditData = [];
         await fetch(url, settings)

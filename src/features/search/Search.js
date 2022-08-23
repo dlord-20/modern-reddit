@@ -10,7 +10,7 @@ import {
 
 const handleSearchChange = (dispatch, value, searchValue) => {
     dispatch(changeSearchValue(value));
-    dispatch(getRedditFeed({category:'', isDateRange: false, dateRange: '', limit: 11, subReddit: true, subredditName: value}));
+    dispatch(getRedditFeed({category:'', isDateRange: false, dateRange: '', limit: 11, subreddit: true, subredditName: value}));
 }
 
 export default function Search() {
