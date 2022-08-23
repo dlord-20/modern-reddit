@@ -10,7 +10,7 @@ export default function UserPosts() {
 
 
     useEffect(() => {
-        dispatch(getRedditFeed());
+        dispatch(getRedditFeed({category: 'hot', isDateRange: false, dateRange: 'Today', limit: 10, subreddit: false, subredditName: ''}));
         // console.log('getRedditFeed')
     }, category)
 

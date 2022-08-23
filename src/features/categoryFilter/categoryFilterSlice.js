@@ -17,5 +17,7 @@ export const categoryFilterSlice = createSlice({
 export const { changeCategory } = categoryFilterSlice.actions;
 
 export const selectCategoryFilter = (state) => state.categoryFilter;
+// export const selectCount = (state) => state.counter.value;
+
 
 export default categoryFilterSlice.reducer;

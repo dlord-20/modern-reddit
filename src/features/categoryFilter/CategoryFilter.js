@@ -6,9 +6,9 @@ import {
     changeCategory
 } from './categoryFilterSlice';
 
-const handleCategoryChange = (dispatch, value, category) => {
+const handleCategoryChange = (dispatch, value) => {
     dispatch(changeCategory(value));
-    dispatch(getRedditFeed(category, false, 'Today', 10, false, ''));
+    dispatch(getRedditFeed({ category: value, isDateRange: false, dateRange: 'Today', limit: 10, subreddit: false, subredditName: ''}));
 }
 
 export default function CategoryFilter() {
@@ -18,10 +18,9 @@ export default function CategoryFilter() {
     return (
         <div>
             <label>
-                <select value={category} onChange={(e) => handleCategoryChange(dispatch, e.target.value, category)}>
+                <select value={category} onChange={(e) => handleCategoryChange(dispatch, e.target.value)}>
                     <option value="hot">Hot</option>
                     <option value="new">New</option>
-                    <option value="popular">Popular</option>
                     <option value="top">Top</option>
                     <option value="rising">Rising</option>
                 </select>
