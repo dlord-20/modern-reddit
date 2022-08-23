@@ -20,11 +20,12 @@ export default function UserPosts() {
 
     const handleRedditFeed = () => {
         if(postsLoading) {
-            return <p>hi</p>
+            return <p>Loading</p>;
         } else if(postsFailed) {
-            return <p>oh no</p>
-        } else {
-            return <p>Yay</p>
+            return <p>Failed to load</p>;
+        } else if(!postsFailed && !postsLoading) {
+            // return <p>Got to get this to work</p>
+            return <UserPost title={redditPosts[0].title}/>;
         }
     }
 
@@ -32,8 +33,6 @@ export default function UserPosts() {
         <div>
             <p>UserPosts</p>
             {handleRedditFeed()}
-            <UserPost />
-            <UserPost />
         </div>
     )
 }

@@ -9,7 +9,15 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const initialState = {
     isLoading: false,
     isRejected: false,
-    redditFeed: {}
+    redditFeed: [{
+            title: 'loading title',
+            url: 'loading url',
+            thumbnail: '#',
+            score: -5,
+            selftext: 'loading text',
+            author: 'loading author',
+            body: 'loading body'
+    }]
 }
 
 // Different types of reddit URLS
