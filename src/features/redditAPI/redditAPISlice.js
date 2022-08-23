@@ -97,6 +97,8 @@ export const redditAPISlice = createSlice({
 
 // export const { changeCategory, changeDateRange } = redditAPISlice.actions;
 
-export const selectRedditAPI = (state) => state.redditAPI;
+export const selectIsLoading = (state) => state.redditAPI.isLoading;
+export const selectIsRejected = (state) => state.redditAPI.isRejected;
+export const selectRedditFeed = (state) => state.redditAPI.redditFeed;
 
 export default redditAPISlice.reducer;

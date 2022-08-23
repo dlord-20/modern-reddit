@@ -8,7 +8,7 @@ import {
 
 
 
-const handleSearchChange = (dispatch, value, searchValue) => {
+const handleSearchChange = (dispatch, value) => {
     dispatch(changeSearchValue(value));
     dispatch(getRedditFeed({category:'', isDateRange: false, dateRange: '', limit: 11, subreddit: true, subredditName: value}));
 }
