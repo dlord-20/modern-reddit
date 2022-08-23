@@ -20,18 +20,18 @@ export default function UserPosts() {
 
     const handleRedditFeed = () => {
         if(postsLoading) {
-            
+            return <p>hi</p>
         } else if(postsFailed) {
-
+            return <p>oh no</p>
         } else {
-
+            return <p>Yay</p>
         }
     }
 
     return(
         <div>
             <p>UserPosts</p>
-            {/* {redditPosts[0].title} */}
+            {handleRedditFeed()}
             <UserPost />
             <UserPost />
         </div>
