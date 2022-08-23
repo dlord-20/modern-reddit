@@ -25,7 +25,24 @@ export default function UserPosts() {
             return <p>Failed to load</p>;
         } else if(!postsFailed && !postsLoading) {
             // return <p>Got to get this to work</p>
-            return <UserPost title={redditPosts[0].title}/>;
+            const redditData = [];
+            for (const post of redditPosts) {
+                console.log(post.title);
+                redditData.push(
+                    <UserPost 
+                        title={post.title}
+                        thumbnail={post.thumbnail}
+                    />
+                )
+            }
+
+            return redditData;
+
+            // const post = redditPosts[0];
+            // return <UserPost 
+            // title={post.title}
+            // thumbnail={post.thumbnail}
+            // />;
         }
     }
 

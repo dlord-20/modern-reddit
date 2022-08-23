@@ -13,7 +13,7 @@ const initialState = {
             title: 'loading title',
             url: 'loading url',
             thumbnail: '#',
-            score: -5,
+            score: 0,
             selftext: 'loading text',
             author: 'loading author',
             body: 'loading body'
