@@ -21,14 +21,12 @@ const initialState = {
 // https://www.reddit.com/top/?t=week
 
 const getRedditURL = (category, isDateRange, dateRange, limit, subreddit, subredditName) => {
-    let url = '';
+    let url = `https://www.reddit.com/${category}.json?limit=${limit}`;
     if(subreddit) {
         url = `https://www.reddit.com/r/${subredditName}.json?limit=${limit}`;
     } else if(isDateRange) {
         url = `https://www.reddit.com/top.json?t=${dateRange}&limit=${limit}`;
-    } else {
-        url = `https://www.reddit.com/${category}.json?limit=${limit}`
-    }
+    } 
     return url;
 }
 
@@ -37,8 +35,8 @@ export const getRedditFeed = createAsyncThunk(
     'redditAPI/getFeed',
     async (category = 'new', isDateRange = false, dateRange = 'Today', limit = 10, subreddit = false, subredditName = '') => {
         //Probably should have url come from another function that can decide what url type we are looking for
-        const urlTest = getRedditURL(category, isDateRange, dateRange, limit, subreddit, subredditName);
-        const url = `https://www.reddit.com/${category}.json?limit=${limit}`;
+        const url = getRedditURL(category, isDateRange, dateRange, limit, subreddit, subredditName);
+        // const url = `https://www.reddit.com/${category}.json?limit=${limit}`;
         const settings = { method: "Get"};
         let redditData = [];
         await fetch(url, settings)

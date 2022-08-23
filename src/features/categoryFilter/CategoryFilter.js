@@ -8,7 +8,7 @@ import {
 
 const handleCategoryChange = (dispatch, value, category) => {
     dispatch(changeCategory(value));
-    dispatch(getRedditFeed(category));
+    dispatch(getRedditFeed(category, false, 'Today', 10, false, ''));
 }
 
 export default function CategoryFilter() {

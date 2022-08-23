@@ -3,12 +3,14 @@ import counterReducer from '../features/counter/counterSlice';
 import categoryFilterReducer from '../features/categoryFilter/categoryFilterSlice';
 import dateRangeFilterReducer from '../features/dateRangeFilter/dateRangeFilterSlice';
 import redditAPIReducer from '../features/redditAPI/redditAPISlice';
+import searchReducer from '../features/search/searchSlice';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     category: categoryFilterReducer,
     dateRange: dateRangeFilterReducer,
-    redditAPI: redditAPIReducer
+    redditAPI: redditAPIReducer,
+    search: searchReducer
   },
 });

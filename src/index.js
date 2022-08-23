@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
-import App from './App';
+// import App from './App';
 import Nav from './features/nav/Nav';
 import UserPosts from './features/userPosts/UserPosts';
 import Footer from './features/footer/Footer';
