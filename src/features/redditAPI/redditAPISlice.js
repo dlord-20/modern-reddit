@@ -74,7 +74,7 @@ export const getRedditFeed = createAsyncThunk(
                     })
                 }
             });
-            console.log(url);
+            // console.log(url);
         return redditData;
     }
 )

@@ -3,6 +3,7 @@ import UserPost from "../userPost/UserPost";
 import { getRedditFeed, selectIsLoading, selectIsRejected, selectRedditFeed } from "../redditAPI/redditAPISlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCategoryFilter } from "../categoryFilter/categoryFilterSlice";
+import styles from './userPosts.module.css';
 
 export default function UserPosts() {
     const dispatch = useDispatch();
@@ -24,10 +25,8 @@ export default function UserPosts() {
         } else if(postsFailed) {
             return <p>Failed to load</p>;
         } else if(!postsFailed && !postsLoading) {
-            // return <p>Got to get this to work</p>
             const redditData = [];
             for (const post of redditPosts) {
-                console.log(post.title);
                 redditData.push(
                     <UserPost 
                         title={post.title}
@@ -37,17 +36,11 @@ export default function UserPosts() {
             }
 
             return redditData;
-
-            // const post = redditPosts[0];
-            // return <UserPost 
-            // title={post.title}
-            // thumbnail={post.thumbnail}
-            // />;
         }
     }
 
     return(
-        <div>
+        <div className={styles.container}>
             <p>UserPosts</p>
             {handleRedditFeed()}
         </div>
