@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './userpost.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faSortDown, faSortUp} from '@fortawesome/free-solid-svg-icons';
 
 
 export default function UserPost(props) {
@@ -30,9 +31,9 @@ export default function UserPost(props) {
             <p>{title}</p>
             <p>{url}</p>
             <div className={styles.score}>
-                <FontAwesomeIcon icon="fa-solid fa-arrow-up" />
+                <FontAwesomeIcon icon={faSortUp} />
                 <p>{score}</p>
-                <FontAwesomeIcon icon="fa-solid fa-sort-up" />
+                <FontAwesomeIcon icon={faSortDown} />
             </div>
             <p>{author}</p>
             <p>{selftext}</p>
