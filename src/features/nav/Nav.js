@@ -2,6 +2,7 @@ import React, { useState} from "react";
 import CategoryFilter from "../categoryFilter/CategoryFilter";
 import DateRangeFilter from "../dateRangeFilter/DateRangeFilter";
 import Search from "../search/Search";
+import styles from './Nav.module.css';
 
 export default function Nav() {
 
@@ -9,10 +10,13 @@ export default function Nav() {
         <div>
             <p>Navigation</p>
             <form>
-                <CategoryFilter />
-                <DateRangeFilter />
+                <div>
+                    <CategoryFilter />
+                    <DateRangeFilter />
+                </div>
+                <Search />
+
             </form>
-            <Search />
         </div>
     )
 }

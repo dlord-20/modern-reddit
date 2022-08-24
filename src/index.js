@@ -7,7 +7,8 @@ import Nav from './features/nav/Nav';
 import UserPosts from './features/userPosts/UserPosts';
 import Footer from './features/footer/Footer';
 import reportWebVitals from './reportWebVitals';
-import './index.css';
+import'./index.css';
+import styles from '../src/index.module.css';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -15,9 +16,11 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Nav />
-      <UserPosts />
-      <Footer />
+      <div className={styles.container}>
+        <Nav />
+        <UserPosts />
+        <Footer />
+      </div>
     </Provider>
   </React.StrictMode>
 );

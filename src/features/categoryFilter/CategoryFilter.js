@@ -18,6 +18,7 @@ export default function CategoryFilter() {
     return (
         <div>
             <label>
+                Category 
                 <select value={category} onChange={(e) => handleCategoryChange(dispatch, e.target.value)}>
                     <option value="hot">Hot</option>
                     <option value="new">New</option>
