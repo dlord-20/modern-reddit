@@ -1,14 +1,16 @@
+
+/* Need to figure out how to make it so image doesn't bleed over on right side */
 .container {
     /* background-color: pink; */
     word-wrap: break-word;
     margin-bottom: 1rem;
     border-radius: 10px;
     box-shadow: 5px 5px 5px lightgrey;
+    border: .5px solid gray;
+    box-sizing: border-box;
+    width: 600px;
 }
 
-/* .container * {
-    box-sizing: border-box;
-} */
 
 .loadingRedditThumbnail {
     width: 50px;
@@ -18,7 +20,7 @@
 
 .imageContainer {
     box-sizing: border-box;
-    width: 600px;
+    width: 599px;
     height: 400px;
     position: absolute;
     overflow: hidden;
@@ -81,7 +83,7 @@
 .authorContainer {
     position: absolute;
     display: flex;
-    width: 600px;
+    width: 599px;
     height: 400px;
     justify-content: flex-end;
     align-items: flex-start;
@@ -100,7 +102,7 @@
     padding: 0 1rem;
     padding-left: 1.5rem;
     border-bottom-left-radius: 2.5rem;
-    border-top-right-radius: 10px;
+    border-top-right-radius: 17px;
 }
 
 .postInfo {
