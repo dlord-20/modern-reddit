@@ -7,20 +7,17 @@ import styles from './userpost.module.css';
 
 export default function UserPost(props) {
     const title = props.title;
+    const url = props.url;
     const thumbnail = props.thumbnail;
-    // const loaded = useSelector(selectIsLoading);
-    // const failed = useSelector(selectIsRejected);
-
-    // const handleRedditInput = () => {
-    //     console.log(loaded);
-    //     console.log(failed);
-    //     if(!loaded && !failed) {
-    //         return <img src={redditPost.thumbnail} alt='#'/>
-    //     }
-    // }
+    const score = props.score;
+    const selftext = props.selftext;
+    const author = props.author;
+    const body = props.body;
 
     const handleImageInput = () => {
-        console.log(thumbnail);
+        if(thumbnail === 'Loading...') {
+            return <div className={styles.loadingRedditThumbnail}></div>
+        }
         if(thumbnail !== null && thumbnail !== 'nsfw' && thumbnail !== 'default' && thumbnail !== 'default' && thumbnail !== 'spoiler' && thumbnail !== 'self' && thumbnail !== '') {
             return <img src={thumbnail} alt='#'/>
         } 
@@ -29,14 +26,13 @@ export default function UserPost(props) {
 
     return (
         <div className={styles.container}>
-            {/* {handleRedditInput()} */}
-            {/* <p>UserPost here</p>
-            <p>Arrow up</p>
-            <p>Score</p>
-            <p>Arrow down</p> */}
             <p>{title}</p>
+            <p>{url}</p>
+            <p>{score}</p>
+            <p>{author}</p>
+            <p>{selftext}</p>
+            <p>{body}</p>
             {handleImageInput()}
-            {/* <img src={thumbnail} alt='#'/> */}
         </div>
     );
 }

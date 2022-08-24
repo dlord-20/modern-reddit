@@ -20,12 +20,24 @@ export default function UserPosts() {
     const redditPosts = useSelector(selectRedditFeed);
 
     const handleRedditFeed = () => {
+        const redditData = [];
         if(postsLoading) {
-            return <p>Loading</p>;
+            for(let i = 0; i < 3; i++) {
+                redditData.push(
+                    <UserPost 
+                        title='Loading...'
+                        url='Loading...'
+                        thumbnail='Loading...'
+                        score='Loading...'
+                        selftext='Loading...'
+                        author='Loading...'
+                        body='Loading...'
+                    />
+                )
+            }
         } else if(postsFailed) {
             return <p>Failed to load</p>;
         } else if(!postsFailed && !postsLoading) {
-            const redditData = [];
             for (const post of redditPosts) {
                 redditData.push(
                     <UserPost 
@@ -39,9 +51,8 @@ export default function UserPosts() {
                     />
                 )
             }
-
-            return redditData;
         }
+        return redditData;
     }
 
     return(
