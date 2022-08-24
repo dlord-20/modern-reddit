@@ -32,15 +32,19 @@ export default function UserPost(props) {
             </div>
             <div className={styles.scoreContainer}>
                 <div className={styles.score}>
-                    <p>{score}</p>
                     <FontAwesomeIcon className={styles.scoreArrows} icon={faSortUp} />
+                    <p>{score}</p>
                     <FontAwesomeIcon className={styles.scoreArrows} icon={faSortDown} />
+                </div>
+            </div>
+            <div className={styles.authorContainer}>
+                <div className={styles.author}>
+                    <p>{author}</p>
                 </div>
             </div>
             <div className={styles.postInfo}>
                 <p>{title}</p>
                 <p>{url}</p>
-                <p>{author}</p>
                 <p>{selftext}</p>
                 <p>{body}</p>
             </div>
