@@ -70,7 +70,7 @@ export const getRedditFeed = createAsyncThunk(
                         score: position.data.score,
                         selftext: position.data.selftext,
                         author: position.data.author,
-                        body: position.data.body
+                        body: position.data.body,
                     })
                 }
             });

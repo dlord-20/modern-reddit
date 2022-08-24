@@ -12,6 +12,7 @@ export default function UserPost(props) {
     const selftext = props.selftext;
     const author = props.author;
     const body = props.body;
+    const preview = props.preview;
 
     const handleImageInput = () => {
         if(thumbnail === 'Loading...') {
@@ -21,6 +22,10 @@ export default function UserPost(props) {
             return <img src={thumbnail} alt='#'/>
         }
         return null;
+    }
+
+    const numberWithCommas = (x) => {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
     return (
@@ -33,7 +38,7 @@ export default function UserPost(props) {
             <div className={styles.scoreContainer}>
                 <div className={styles.score}>
                     <FontAwesomeIcon className={styles.scoreArrows} icon={faSortUp} />
-                    <p>{score}</p>
+                    <p>{numberWithCommas(score)}</p>
                     <FontAwesomeIcon className={styles.scoreArrows} icon={faSortDown} />
                 </div>
             </div>
