@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './userpost.module.css';
-
-// import { useSelector } from 'react-redux';
-// import { selectIsLoading, selectIsRejected } from '../redditAPI/redditAPISlice';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 export default function UserPost(props) {
@@ -32,6 +30,7 @@ export default function UserPost(props) {
             <p>{title}</p>
             <p>{url}</p>
             <div className={styles.score}>
+                <FontAwesomeIcon icon="fa-solid fa-arrow-up" />
                 <p>{score}</p>
                 <FontAwesomeIcon icon="fa-solid fa-sort-up" />
             </div>
