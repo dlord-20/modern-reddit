@@ -1,6 +1,9 @@
 .container {
-    background-color: pink;
+    /* background-color: pink; */
     word-wrap: break-word;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px lightgrey;
 }
 
 /* .container * {
@@ -10,7 +13,7 @@
 .loadingRedditThumbnail {
     width: 50px;
     height: 50px;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 .imageContainer {
@@ -20,6 +23,8 @@
     position: absolute;
     overflow: hidden;
     background-color: lightgrey;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     opacity: .9;
 }
 
@@ -28,8 +33,11 @@
     box-sizing: border-box;
     display: block;
     min-width: 100%;
+    min-height: 400px;
     top: 0;
     left: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .scoreContainer {
@@ -70,6 +78,35 @@
     opacity: .5;
 }
 
+.authorContainer {
+    position: absolute;
+    display: flex;
+    width: 600px;
+    height: 400px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin: 0;
+}
+
+.authorContainer * {
+    margin: 0;
+}
+
+.author {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 0 1rem;
+    padding-left: 1.5rem;
+    border-bottom-left-radius: 2.5rem;
+    border-top-right-radius: 10px;
+}
+
 .postInfo {
+    padding: 2rem;
     padding-top: 405px;
+}
+.postInfo p:nth-child(1) {
+    font-size: 1.5rem;
 }

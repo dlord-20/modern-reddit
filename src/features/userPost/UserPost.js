@@ -44,7 +44,7 @@ export default function UserPost(props) {
             </div>
             <div className={styles.postInfo}>
                 <p>{title}</p>
-                <p>{url}</p>
+                {/* <p>{url}</p> */}
                 <p>{selftext}</p>
                 <p>{body}</p>
             </div>
