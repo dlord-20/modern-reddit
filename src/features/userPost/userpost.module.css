@@ -7,3 +7,12 @@
     height: 50px;
     background-color: aqua;
 }
+
+.imageContainer {
+    position: absolute;
+}
+
+.score {
+    font-size: 2rem;
+    z-index: 2;
+}

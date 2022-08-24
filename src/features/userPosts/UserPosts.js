@@ -36,7 +36,7 @@ export default function UserPosts() {
                 )
             }
         } else if(postsFailed) {
-            return <p>Failed to load</p>;
+            return <p>Failed to load posts :(</p>;
         } else if(!postsFailed && !postsLoading) {
             for (const post of redditPosts) {
                 redditData.push(

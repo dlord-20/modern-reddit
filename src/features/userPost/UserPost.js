@@ -26,13 +26,19 @@ export default function UserPost(props) {
 
     return (
         <div className={styles.container}>
+            <div className={styles.imageContainer}>
+                {handleImageInput()}
+            </div>
             <p>{title}</p>
             <p>{url}</p>
-            <p>{score}</p>
+            <div className={styles.score}>
+                <p>{score}</p>
+                <FontAwesomeIcon icon="fa-solid fa-sort-up" />
+            </div>
             <p>{author}</p>
             <p>{selftext}</p>
             <p>{body}</p>
-            {handleImageInput()}
+
         </div>
     );
 }
