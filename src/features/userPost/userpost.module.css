@@ -1,6 +1,13 @@
 .container {
     background-color: pink;
+    word-wrap: break-word;
+    border: 2px solid gray;
+    box-sizing: border-box;
 }
+
+/* .container * {
+    box-sizing: border-box;
+} */
 
 .loadingRedditThumbnail {
     width: 50px;
@@ -9,10 +16,39 @@
 }
 
 .imageContainer {
+    box-sizing: border-box;
+    width: 600px;
+    height: 400px;
     position: absolute;
+    overflow: hidden;
+    background-color: lightgrey;
+    opacity: .9;
+}
+
+.imageContainer img {
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    min-width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.scoreContainer {
+    position: absolute;
+
 }
 
 .score {
     font-size: 2rem;
     z-index: 2;
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    border: 1px solid green;
+}
+
+.postInfo {
+    padding-top: 405px;
 }

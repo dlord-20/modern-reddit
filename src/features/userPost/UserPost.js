@@ -15,29 +15,36 @@ export default function UserPost(props) {
 
     const handleImageInput = () => {
         if(thumbnail === 'Loading...') {
-            return <div className={styles.loadingRedditThumbnail}></div>
+            return null;
         }
         if(thumbnail !== null && thumbnail !== 'nsfw' && thumbnail !== 'default' && thumbnail !== 'default' && thumbnail !== 'spoiler' && thumbnail !== 'self' && thumbnail !== '') {
             return <img src={thumbnail} alt='#'/>
-        } 
+        }
         return null;
     }
 
     return (
         <div className={styles.container}>
             <div className={styles.imageContainer}>
-                {handleImageInput()}
+                <div className={styles.image}>
+                    {handleImageInput()}
+                </div>
             </div>
-            <p>{title}</p>
-            <p>{url}</p>
-            <div className={styles.score}>
-                <FontAwesomeIcon icon={faSortUp} />
-                <p>{score}</p>
-                <FontAwesomeIcon icon={faSortDown} />
+            <div className={styles.scoreContainer}>
+                <div className={styles.score}>
+                    <FontAwesomeIcon icon={faSortUp} />
+                    <p>{score}</p>
+                    <FontAwesomeIcon icon={faSortDown} />
+                </div>
             </div>
-            <p>{author}</p>
-            <p>{selftext}</p>
-            <p>{body}</p>
+            <div className={styles.postInfo}>
+                <p>{title}</p>
+                <p>{url}</p>
+                <p>{author}</p>
+                <p>{selftext}</p>
+                <p>{body}</p>
+            </div>
+
 
         </div>
     );
