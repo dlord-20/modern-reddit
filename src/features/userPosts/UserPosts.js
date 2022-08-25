@@ -12,7 +12,7 @@ export default function UserPosts() {
 
 
     useEffect(() => {
-        dispatch(getRedditFeed({category: 'hot', isDateRange: false, dateRange: 'Today', limit: 10, subreddit: false, subredditName: ''}));
+        dispatch(getRedditFeed({category: 'hot', isDateRange: false, dateRange: 'Today', limit: 100, subreddit: false, subredditName: ''}));
     }, []);
 
     const postsLoading = useSelector(selectIsLoading);
@@ -59,6 +59,9 @@ export default function UserPosts() {
         <div className={styles.container}>
             <p>UserPosts</p>
             {handleRedditFeed()}
+            <div className={styles.buttonA}>
+                <p>See More</p>
+            </div>
         </div>
     )
 }

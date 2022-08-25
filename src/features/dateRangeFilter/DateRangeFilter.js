@@ -16,7 +16,7 @@ export default function DateRangeFilter() {
     
     const handleDateRangeChange = (value) => {
         dispatch(changeDateRange(value));
-        dispatch(getRedditFeed({ category: value, isDateRange: true, dateRange: value, limit: 10, subreddit: false, subredditName: ''}));
+        dispatch(getRedditFeed({ category: value, isDateRange: true, dateRange: value, limit: 100, subreddit: false, subredditName: ''}));
     }
 
     return (

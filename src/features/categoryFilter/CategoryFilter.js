@@ -15,7 +15,7 @@ export default function CategoryFilter() {
 
     const handleCategoryChange = (value) => {
         dispatch(changeCategory(value));
-        dispatch(getRedditFeed({ category: value, isDateRange: false, dateRange: 'Today', limit: 10, subreddit: false, subredditName: ''}));
+        dispatch(getRedditFeed({ category: value, isDateRange: false, dateRange: 'Today', limit: 100, subreddit: false, subredditName: ''}));
         if(value === 'top') {
             //Call a function that shows the date range filter
             dispatch(changeVisibility(true));
