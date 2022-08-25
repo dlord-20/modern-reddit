@@ -14,7 +14,7 @@ export const dateRangeFilterSlice = createSlice({
     }
 });
 
-export const { changeDateRange, changeVisibility } = dateRangeFilterSlice.actions;
+export const { changeDateRange } = dateRangeFilterSlice.actions;
 
 export const selectDateRangeFilter = (state) => state.dateRangeFilter;
 

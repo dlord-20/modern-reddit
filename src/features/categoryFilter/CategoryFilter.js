@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { selectDateRangeVisibility, changeVisibility } from "../dateRangeFilter/dateRangeVisibilitySlice";
 import { getRedditFeed } from "../redditAPI/redditAPISlice";
 import {
     selectCategoryFilter,
@@ -9,17 +10,18 @@ import {
 
 export default function CategoryFilter() {
     const category = useSelector(selectCategoryFilter);
+    const dateRangeVisible = useSelector(selectDateRangeVisibility);
     const dispatch = useDispatch();
 
     const handleCategoryChange = (value) => {
         dispatch(changeCategory(value));
         dispatch(getRedditFeed({ category: value, isDateRange: false, dateRange: 'Today', limit: 10, subreddit: false, subredditName: ''}));
-        // if(value === 'top') {
-        //     //Call a function that shows the date range filter
-        //     dispatch(changeVisibility(true));
-        // } else if(dateRangeVisible !== false) {
-        //     dispatch(changeVisibility(false));
-        // }
+        if(value === 'top') {
+            //Call a function that shows the date range filter
+            dispatch(changeVisibility(true));
+        } else if(dateRangeVisible !== false) {
+            dispatch(changeVisibility(false));
+        }
     }
 
     return (
