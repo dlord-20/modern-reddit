@@ -11,10 +11,10 @@ import {
 
 export default function DateRangeFilter() {
 
-    const dateRange = useSelector(selectDateRangeFilter);
     const dispatch = useDispatch();
+    const dateRange = useSelector(selectDateRangeFilter);
     
-    const handleDateRangeChange = (dispatch, value) => {
+    const handleDateRangeChange = (value) => {
         dispatch(changeDateRange(value));
         dispatch(getRedditFeed({ category: value, isDateRange: true, dateRange: value, limit: 10, subreddit: false, subredditName: ''}));
     }
@@ -22,7 +22,7 @@ export default function DateRangeFilter() {
     return (
         <div>
             <label>
-                <select value={dateRange}  onChange={(e) => handleDateRangeChange(dispatch, e.target.value)}>
+                <select value={dateRange}  onChange={(e) => handleDateRangeChange(e.target.value)}>
                     <option value="now">Now</option>
                     <option value="today">Today</option>
                     <option value="week">This Week</option>

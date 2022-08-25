@@ -6,20 +6,27 @@ import {
     changeCategory
 } from './categoryFilterSlice';
 
-const handleCategoryChange = (dispatch, value) => {
-    dispatch(changeCategory(value));
-    dispatch(getRedditFeed({ category: value, isDateRange: false, dateRange: 'Today', limit: 10, subreddit: false, subredditName: ''}));
-}
 
 export default function CategoryFilter() {
     const category = useSelector(selectCategoryFilter);
     const dispatch = useDispatch();
 
+    const handleCategoryChange = (value) => {
+        dispatch(changeCategory(value));
+        dispatch(getRedditFeed({ category: value, isDateRange: false, dateRange: 'Today', limit: 10, subreddit: false, subredditName: ''}));
+        // if(value === 'top') {
+        //     //Call a function that shows the date range filter
+        //     dispatch(changeVisibility(true));
+        // } else if(dateRangeVisible !== false) {
+        //     dispatch(changeVisibility(false));
+        // }
+    }
+
     return (
         <div>
             <label>
                 Category 
-                <select value={category} onChange={(e) => handleCategoryChange(dispatch, e.target.value)}>
+                <select value={category} onChange={(e) => handleCategoryChange(e.target.value)}>
                     <option value="hot">Hot</option>
                     <option value="new">New</option>
                     <option value="top">Top</option>

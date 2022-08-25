@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    value: '24 Hours'
+    value: 'today'
 }
 
 export const dateRangeFilterSlice = createSlice({
@@ -14,7 +14,7 @@ export const dateRangeFilterSlice = createSlice({
     }
 });
 
-export const { changeDateRange } = dateRangeFilterSlice.actions;
+export const { changeDateRange, changeVisibility } = dateRangeFilterSlice.actions;
 
 export const selectDateRangeFilter = (state) => state.dateRangeFilter;
 
