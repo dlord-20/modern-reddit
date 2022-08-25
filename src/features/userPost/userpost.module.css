@@ -8,7 +8,7 @@
     box-shadow: 5px 5px 5px lightgrey;
     border: .5px solid gray;
     box-sizing: border-box;
-    width: 600px;
+    max-width: 600px;
 }
 
 
@@ -20,7 +20,8 @@
 
 .imageContainer {
     box-sizing: border-box;
-    width: 599px;
+    max-width: 599px;
+    width: 100%;
     height: 400px;
     position: absolute;
     overflow: hidden;
@@ -28,6 +29,7 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     opacity: .9;
+    z-index: -1;
 }
 
 .imageContainer img {
@@ -40,12 +42,14 @@
     left: 0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    margin-right: 5px;
 }
 
 .scoreContainer {
     position: absolute;
     display: flex;
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     height: 400px;
     justify-content: flex-end;
     align-items: flex-end;
@@ -83,7 +87,8 @@
 .authorContainer {
     position: absolute;
     display: flex;
-    width: 599px;
+    max-width: 599px;
+    width: 100%;
     height: 400px;
     justify-content: flex-end;
     align-items: flex-start;
@@ -103,6 +108,7 @@
     padding-left: 1.5rem;
     border-bottom-left-radius: 2.5rem;
     border-top-right-radius: 17px;
+    margin-right: 1px;
 }
 
 .postInfo {
