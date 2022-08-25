@@ -1,9 +1,12 @@
 form {
     display: flex;
     justify-content: space-between;
+    color: green;
+    font-size: 1.1rem;
 }
 
 form div {
     display: flex;
     gap: 1rem;
 }
+

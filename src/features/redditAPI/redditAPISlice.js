@@ -39,9 +39,9 @@ const getRedditURL = (category, isDateRange, dateRange, limit, subreddit, subred
     if(subreddit) {
         url = `https://www.reddit.com/r/${subredditName}.json?limit=${limit}`;
     } 
-    // else if(isDateRange) {
-    //     // url = `https://www.reddit.com/top.json?t=${dateRange}&limit=${limit}`;
-    // } 
+    else if(isDateRange) {
+        url = `https://www.reddit.com/top.json?t=${dateRange}&limit=${limit}`;
+    } 
     return url;
 }
 
