@@ -54,9 +54,12 @@ export default function UserPosts() {
                     />
                 )
             }
+            const button = handleSeeMoreButton();
+            redditData.push(button);
         }
         return redditData;
     }
+
 
     const handleSeeMoreClick = () => {
         setRedditEndAddNum(redditEndAddNum + 10);
@@ -75,7 +78,6 @@ export default function UserPosts() {
     return(
         <div className={styles.container}>
             {handleRedditFeed()}
-            {handleSeeMoreButton()}
         </div>
     )
 }
