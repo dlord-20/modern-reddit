@@ -62,13 +62,21 @@ export default function UserPosts() {
         setRedditEndAddNum(redditEndAddNum + 10);
     }
 
+    const handleSeeMoreButton = () => {
+        if(redditEndAddNum < 100) {
+            return (
+                <div className={styles.buttonA} onClick={() => handleSeeMoreClick()}>
+                    <p>See More</p>
+                </div>
+            )
+        }
+    }
+
     return(
         <div className={styles.container}>
             <p>UserPosts</p>
             {handleRedditFeed()}
-            <div className={styles.buttonA} onClick={() => handleSeeMoreClick()}>
-                <p>See More</p>
-            </div>
+            {handleSeeMoreButton()}
         </div>
     )
 }
