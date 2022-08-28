@@ -20,8 +20,8 @@ export default function Nav() {
     }
 
     return (
-        <div>
-            <p>Navigation</p>
+        <div className={styles.navContainer}>
+            <h1>Modern Reddit API</h1>
             <form>
                 <div>
                     <CategoryFilter />

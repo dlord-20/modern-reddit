@@ -1,12 +1,19 @@
+.navContainer {
+    padding: 1rem 0;
+}
+
 form {
     display: flex;
     justify-content: space-between;
-    color: green;
     font-size: 1.1rem;
+    padding-top: 1rem;
+}
+
+label {
+    cursor: text;
 }
 
 form div {
     display: flex;
     gap: 1rem;
 }
-

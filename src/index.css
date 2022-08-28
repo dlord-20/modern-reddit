@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: raleway, sans-serif;
-
+  font-weight: 200;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -14,4 +14,10 @@ body * {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 300;
 }

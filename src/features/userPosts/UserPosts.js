@@ -74,7 +74,6 @@ export default function UserPosts() {
 
     return(
         <div className={styles.container}>
-            <p>UserPosts</p>
             {handleRedditFeed()}
             {handleSeeMoreButton()}
         </div>

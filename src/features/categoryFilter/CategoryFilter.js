@@ -28,13 +28,14 @@ export default function CategoryFilter() {
         <div>
             <label>
                 Category 
+                </label>
                 <select value={category} onChange={(e) => handleCategoryChange(e.target.value)}>
                     <option value="hot">Hot</option>
                     <option value="new">New</option>
                     <option value="top">Top</option>
                     <option value="rising">Rising</option>
                 </select>
-            </label>
+            
         </div>
     )
 }

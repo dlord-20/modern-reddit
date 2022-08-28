@@ -21,16 +21,15 @@ export default function DateRangeFilter() {
 
     return (
         <div>
-            <label>
-                <select value={dateRange}  onChange={(e) => handleDateRangeChange(e.target.value)}>
-                    <option value="now">Now</option>
-                    <option value="today">Today</option>
-                    <option value="week">This Week</option>
-                    <option value="month">This Month</option>
-                    <option value="year">This Year</option>
-                    <option value="all">All Time</option>
-                </select>
-            </label>
+            <label>Time Period</label>
+            <select value={dateRange}  onChange={(e) => handleDateRangeChange(e.target.value)}>
+                <option value="now">Now</option>
+                <option value="today">Today</option>
+                <option value="week">This Week</option>
+                <option value="month">This Month</option>
+                <option value="year">This Year</option>
+                <option value="all">All Time</option>
+            </select>
         </div>
     )
 }
