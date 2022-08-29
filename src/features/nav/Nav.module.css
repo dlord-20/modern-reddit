@@ -6,7 +6,7 @@ form {
     display: flex;
     justify-content: space-between;
     font-size: 1.1rem;
-    padding-top: 1rem;
+    padding-top: .8rem;
 }
 
 label {
