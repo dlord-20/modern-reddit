@@ -9,4 +9,5 @@ The app also uses FontAwesome to add a couple of icons to make the application l
 Additions to be made:
     - Dark Theme Toggle
     - Better dropdown design
-    - Detailed View of Post w/ comment
+    - Detailed View of Post w/ comments
+    - Get better quality from images from reddit API
