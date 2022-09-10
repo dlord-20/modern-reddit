@@ -11,3 +11,4 @@ Additions to be made:
     - Better dropdown design
     - Detailed View of Post w/ comments
     - Get better quality from images from reddit API
+    - Add a better method to get reddit data
