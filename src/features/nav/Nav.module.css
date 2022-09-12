@@ -17,4 +17,5 @@ label {
 form div {
     display: flex;
     gap: 1rem;
+    color: green;
 }
